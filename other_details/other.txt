@@ -1,0 +1,2 @@
+1.Using Chatgpt to get linux command to check the server status (for monitoring process)
+2.when writing monitor.sh bash script getting help from Chatgpt
