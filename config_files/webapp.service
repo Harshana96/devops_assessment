@@ -1,0 +1,15 @@
+#get help from Chatgpt to create this service 
+
+Description=Gunicorn instance to serve Flask Webapp
+After=network.target
+
+User=webapp
+Group=webapp
+WorkingDirectory=/opt/webapp/app
+Environment="PATH=/opt/webapp/venv/bin"
+ExecStart=/opt/webapp/venv/bin/gunicorn --workers 3 --bind 0.0.0.0:5000 app:app
+Restart=always
+StandardOutput=file:/opt/webapp/logs/webapp.log
+StandardError=file:/opt/webapp/logs/webapp-error.log
+
+WantedBy=multi-user.target
